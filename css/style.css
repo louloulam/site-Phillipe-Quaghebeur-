@@ -1221,6 +1221,55 @@ cite {
   .quote-section { padding: 4rem 1.5rem; }
 }
 
+/* ============================================
+   RESERVATION / CALENDLY
+   ============================================ */
+.reservation {
+  padding: 7rem 2rem;
+  background: var(--ivory-mid);
+}
+
+.calendly-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.calendly-placeholder {
+  border: 1px solid rgba(201,168,76,0.3);
+  background: var(--ivory);
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.placeholder-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.placeholder-icon {
+  font-size: 3rem;
+  display: block;
+}
+
+.placeholder-content h3 {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: var(--dark);
+}
+
+.placeholder-content p {
+  font-size: 0.88rem;
+  color: var(--text-mid);
+  line-height: 1.8;
+  max-width: 500px;
+}
+
+/* ============================================
+   SCROLL REVEAL ANIMATIONS
+   ============================================ */
 /* ---------- SCROLL REVEAL ANIMATIONS ---------- */
 .reveal {
   opacity: 0;
