@@ -68,28 +68,40 @@ document.addEventListener('DOMContentLoaded', () => {
 
   sections.forEach(s => sectionObserver.observe(s));
 
-  // ---------- CONTACT FORM (simulation) ----------
+  // ---------- CONTACT FORM (Netlify Forms) ----------
   const form = document.getElementById('contact-form');
   const successMsg = document.getElementById('form-success');
 
   if (form) {
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
 
       const btn = form.querySelector('button[type="submit"]');
       btn.textContent = 'Envoi en cours…';
       btn.disabled = true;
 
-      setTimeout(() => {
-        successMsg.style.display = 'block';
-        form.reset();
+      const formData = new FormData(form);
+
+      try {
+        const response = await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(formData).toString()
+        });
+
+        if (response.ok) {
+          successMsg.style.display = 'block';
+          form.reset();
+          setTimeout(() => { successMsg.style.display = 'none'; }, 6000);
+        } else {
+          alert('Une erreur est survenue. Merci de réessayer ou de nous contacter par téléphone.');
+        }
+      } catch (err) {
+        alert('Erreur de connexion. Merci de réessayer.');
+      } finally {
         btn.textContent = 'Envoyer ma demande ✦';
         btn.disabled = false;
-
-        setTimeout(() => {
-          successMsg.style.display = 'none';
-        }, 6000);
-      }, 1200);
+      }
     });
   }
 

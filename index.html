@@ -347,7 +347,9 @@
       </div>
 
       <div class="contact-form-wrap">
-        <form class="contact-form" id="contact-form">
+        <form class="contact-form" id="contact-form" name="contact-notaire" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="contact-notaire" />
+          <p style="display:none;"><label>Ne pas remplir : <input name="bot-field" /></label></p>
           <div class="form-row">
             <div class="form-group">
               <label for="prenom">Prénom *</label>
