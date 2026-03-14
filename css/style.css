@@ -318,7 +318,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   z-index: 1;
   text-align: center;
   max-width: 800px;
-  padding: 8rem 2rem 4rem;
+  padding: 8rem 2rem 8rem;
   animation: fadeUp 1.2s ease both;
 }
 
@@ -411,7 +411,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 .hero-scroll {
   position: absolute;
-  bottom: 2rem;
+  bottom: 2.5rem;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -421,6 +421,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   color: rgba(201,168,76,0.6);
   z-index: 1;
   animation: fadeUp 1.2s 1s ease both;
+  white-space: nowrap;
 }
 
 .scroll-label {
